@@ -18,8 +18,11 @@ struct LandmarkDetail: View {
                 .offset(y: -130)
                 .padding(.bottom, -130)
             VStack(alignment: .leading) {
-                Text(landmark.name)
-                    .font(.title)
+                HStack {
+                    Text(landmark.name)
+                        .font(.title)
+                    FavoriteButton(isSet: $landmark.isFavorite)
+                }
                 HStack {
                     Text(landmark.park)
                     Spacer()
@@ -30,7 +33,7 @@ struct LandmarkDetail: View {
                 .foregroundStyle(.secondary)
                 
                 Divider()
-                Text("About Turtle Rock")
+                Text("About \(landmark.name)")
                     .font(.title2)
                 Text(landmark.description)
             }
@@ -41,5 +44,7 @@ struct LandmarkDetail: View {
 }
 
 #Preview {
-    LandmarkDetail(landmark: landmarks[0])
+    return Group {
+        LandmarkRow(landmark: ModelData().landmarks[0])
+    }
 }
