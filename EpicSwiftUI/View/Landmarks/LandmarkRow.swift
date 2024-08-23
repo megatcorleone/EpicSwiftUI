@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct LandmarkRow: View {
-    @Environment(ModelData.self) var modelData
-
     var landmark: Landmark
     
     var body: some View {
@@ -29,10 +27,10 @@ struct LandmarkRow: View {
     }
 }
 
+
 #Preview {
     let landmarks = ModelData().landmarks
-    return Group {
-        LandmarkRow(landmark: landmarks[0])
-    }
+    return LandmarkRow(landmark: landmarks[0])
 }
+
 

@@ -10,24 +10,33 @@ import SwiftUI
 struct LandmarkDetail: View {
     
     @State var landmark: Landmark
+    @Environment(ModelData.self) var modelData
+    
+    var landmarkIndex: Int {
+        modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
+    }
+    
     var body: some View {
+        
+        @Bindable var modelData = modelData
+
         VStack {
-            MapView()
+            MapView(locationRegion: landmark.locationCoordinate)
                 .frame(height: 300)
-            CircleImage()
+            CircleImage(image: landmark.image)
                 .offset(y: -130)
                 .padding(.bottom, -130)
             VStack(alignment: .leading) {
                 HStack {
                     Text(landmark.name)
                         .font(.title)
-                    FavoriteButton(isSet: $landmark.isFavorite)
+                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
                 }
                 HStack {
                     Text(landmark.park)
                     Spacer()
                     Text(landmark.state)
-                        
+                    
                 }
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
@@ -44,7 +53,7 @@ struct LandmarkDetail: View {
 }
 
 #Preview {
-    return Group {
-        LandmarkRow(landmark: ModelData().landmarks[0])
-    }
+    let modelData = ModelData()
+    return LandmarkDetail(landmark: modelData.landmarks[0])
+        .environment(modelData)
 }
