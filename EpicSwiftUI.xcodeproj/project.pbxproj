@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18080C87E809AF1E779D64F8 /* Pods_EpicSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7069958DFB6CC56C885D72F9 /* Pods_EpicSwiftUI.framework */; };
 		BE1B3BDB2C780FD800C0A5E3 /* HexagonParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B3BDA2C780FD800C0A5E3 /* HexagonParameter.swift */; };
 		BE1B3BDD2C7811DB00C0A5E3 /* BadgeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B3BDC2C7811DB00C0A5E3 /* BadgeBackground.swift */; };
 		BE1B3BE02C781CE700C0A5E3 /* BadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B3BDF2C781CE700C0A5E3 /* BadgeSymbol.swift */; };
@@ -46,6 +47,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		472F1F20DF5B40D5F5AA2D55 /* Pods-EpicSwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpicSwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-EpicSwiftUI/Pods-EpicSwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
+		7069958DFB6CC56C885D72F9 /* Pods_EpicSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EpicSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FFC773612F64A464181085C /* Pods-EpicSwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpicSwiftUI.release.xcconfig"; path = "Target Support Files/Pods-EpicSwiftUI/Pods-EpicSwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 		BE1B3BDA2C780FD800C0A5E3 /* HexagonParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonParameter.swift; sourceTree = "<group>"; };
 		BE1B3BDC2C7811DB00C0A5E3 /* BadgeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeBackground.swift; sourceTree = "<group>"; };
 		BE1B3BDF2C781CE700C0A5E3 /* BadgeSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSymbol.swift; sourceTree = "<group>"; };
@@ -90,12 +94,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18080C87E809AF1E779D64F8 /* Pods_EpicSwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22328BF23337084BAA7C98D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7069958DFB6CC56C885D72F9 /* Pods_EpicSwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72B25D4A31F0280857EB7214 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				472F1F20DF5B40D5F5AA2D55 /* Pods-EpicSwiftUI.debug.xcconfig */,
+				7FFC773612F64A464181085C /* Pods-EpicSwiftUI.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BE1B3BDE2C78121200C0A5E3 /* Badges */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +188,8 @@
 			children = (
 				BE88C15D2C76E91400EB05E4 /* EpicSwiftUI */,
 				BE88C15C2C76E91400EB05E4 /* Products */,
+				72B25D4A31F0280857EB7214 /* Pods */,
+				22328BF23337084BAA7C98D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,9 +275,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE88C1692C76E91500EB05E4 /* Build configuration list for PBXNativeTarget "EpicSwiftUI" */;
 			buildPhases = (
+				A34425BDE17B434930D42A6C /* [CP] Check Pods Manifest.lock */,
 				BE88C1572C76E91400EB05E4 /* Sources */,
 				BE88C1582C76E91400EB05E4 /* Frameworks */,
 				BE88C1592C76E91400EB05E4 /* Resources */,
+				B9F3B3A50FFEA6A2DA13E6A0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,6 +336,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A34425BDE17B434930D42A6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EpicSwiftUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9F3B3A50FFEA6A2DA13E6A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EpicSwiftUI/Pods-EpicSwiftUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EpicSwiftUI/Pods-EpicSwiftUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EpicSwiftUI/Pods-EpicSwiftUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE88C1572C76E91400EB05E4 /* Sources */ = {
@@ -474,6 +543,7 @@
 		};
 		BE88C16A2C76E91500EB05E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 472F1F20DF5B40D5F5AA2D55 /* Pods-EpicSwiftUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -503,6 +573,7 @@
 		};
 		BE88C16B2C76E91500EB05E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FFC773612F64A464181085C /* Pods-EpicSwiftUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
