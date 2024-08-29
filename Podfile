@@ -10,5 +10,6 @@ target 'EpicSwiftUI' do
 
   # Pods for EpicSwiftUI
   pod 'Alamofire'
+  pod 'lottie-ios'
 
 end
